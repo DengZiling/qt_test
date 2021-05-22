@@ -10,10 +10,11 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+file(GLOB ALLHEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)#将文件夹下所有头文件加入
 find_package(Qt5Core)
 
 add_executable(qt_test
-  main.cpp
+  main.cpp another.cpp
+  ${ALLHEADERS}
 )
 target_link_libraries(qt_test Qt5::Core)
